@@ -1,11 +1,11 @@
-
+п»ї
 #include "MobileApp.h"
 #include <iomanip>
 
 using namespace std;
 
 MobileApp::MobileApp()
-    : name("Без названия"), rating(0.0), price(0.0), leadDeveloper(nullptr) {
+    : name("Р‘РµР· РЅР°Р·РІР°РЅРёСЏ"), rating(0.0), price(0.0), leadDeveloper(nullptr) {
 }
 
 MobileApp::MobileApp(const string& name, double rating, double price, Developer* leadDeveloper)
@@ -49,6 +49,6 @@ void MobileApp::addVersion(const Version& ver) {
 void MobileApp::printTableRow(ostream& os) const {
     os << "| " << left << setw(20) << name
         << " | " << right << setw(7) << fixed << setprecision(1) << rating
-        << " | " << right << setw(11) << fixed << setprecision(2) << price << " руб."
-        << " | " << left << setw(31) << (leadDeveloper ? leadDeveloper->getFullName() : "Не назначен");
+        << " | " << right << setw(11) << fixed << setprecision(2) << price << " СЂСѓР±."
+        << " | " << left << setw(31) << (leadDeveloper ? leadDeveloper->getFullName() : "РќРµ РЅР°Р·РЅР°С‡РµРЅ");
 }

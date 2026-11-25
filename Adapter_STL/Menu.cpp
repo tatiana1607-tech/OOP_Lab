@@ -1,4 +1,4 @@
-#include <iostream>
+Ôªø#include <iostream>
 #include <queue>
 #include <stack>
 #include <vector>
@@ -28,11 +28,11 @@ void printAppsTable(const vector<MobileApp*>& apps, ostream& os) {
     const int tableWidth = 128;
 
     os << setfill('=') << setw(tableWidth) << "" << setfill(' ') << "\n"
-        << "| " << left << setw(20) << "Õ‡Á‚‡ÌËÂ"
-        << " | " << setw(7) << "–ÂÈÚËÌ„"
-        << " | " << setw(20) << "÷ÂÌ‡"
-        << " | " << setw(34) << "¬Â‰Û˘ËÈ ‡Á‡·."
-        << " | " << setw(25) << "—ÔÂˆËÙËÍ‡" << " |\n"
+        << "| " << left << setw(20) << "–ù–∞–∑–≤–∞–Ω–∏–µ"
+        << " | " << setw(7) << "–†–µ–π—Ç–∏–Ω–≥"
+        << " | " << setw(20) << "–¶–µ–Ω–∞"
+        << " | " << setw(34) << "–í–µ–¥—É—â–∏–π —Ä–∞–∑—Ä–∞–±."
+        << " | " << setw(25) << "–°–ø–µ—Ü–∏—Ñ–∏–∫–∞" << " |\n"
         << setfill('-') << setw(tableWidth) << "" << setfill(' ') << "\n";
 
     for (size_t i = 0; i < apps.size(); ++i) {
@@ -70,7 +70,7 @@ void clearInputLine() {
 
 void dumpQueue(queue<MobileApp*> q, ostream& os) {
     if (q.empty()) {
-        os << "Œ˜ÂÂ‰¸ ÂÎËÁ‡ ÔÛÒÚ‡.\n";
+        os << "–û—á–µ—Ä–µ–¥—å —Ä–µ–ª–∏–∑–∞ –ø—É—Å—Ç–∞.\n";
         return;
     }
     vector<MobileApp*> temp;
@@ -83,7 +83,7 @@ void dumpQueue(queue<MobileApp*> q, ostream& os) {
 
 void dumpStack(stack<MobileApp*> st, ostream& os) {
     if (st.empty()) {
-        os << "—ÚÂÍ ËÒÚÓËË ÔÛÒÚ.\n";
+        os << "–°—Ç–µ–∫ –∏—Å—Ç–æ—Ä–∏–∏ –ø—É—Å—Ç.\n";
         return;
     }
     vector<MobileApp*> temp;
@@ -96,7 +96,7 @@ void dumpStack(stack<MobileApp*> st, ostream& os) {
 
 void dumpPriorityDesc(PriorityDescQueue pq, ostream& os) {
     if (pq.empty()) {
-        os << "Œ˜ÂÂ‰¸ ÔËÓËÚÂÚ‡ ÔÛÒÚ‡.\n";
+        os << "–û—á–µ—Ä–µ–¥—å –ø—Ä–∏–æ—Ä–∏—Ç–µ—Ç–∞ –ø—É—Å—Ç–∞.\n";
         return;
     }
     vector<MobileApp*> temp;
@@ -136,7 +136,7 @@ void filterQueueByMinRating(queue<MobileApp*> q, double minRating, ostream& os) 
         }
     }
     if (matched.empty()) {
-        os << "œËÎÓÊÂÌËÈ Ò ÂÈÚËÌ„ÓÏ >= " << minRating << " ÌÂ Ì‡È‰ÂÌÓ.\n";
+        os << "–ü—Ä–∏–ª–æ–∂–µ–Ω–∏–π —Å —Ä–µ–π—Ç–∏–Ω–≥–æ–º >= " << minRating << " –Ω–µ –Ω–∞–π–¥–µ–Ω–æ.\n";
     }
     else {
         printAppsTable(matched, os);
@@ -219,7 +219,7 @@ void filterStackByMinRating(stack<MobileApp*> st, double minRating, ostream& os)
         }
     }
     if (matched.empty()) {
-        os << "œËÎÓÊÂÌËÈ Ò ÂÈÚËÌ„ÓÏ >= " << minRating << " ÌÂ Ì‡È‰ÂÌÓ.\n";
+        os << "–ü—Ä–∏–ª–æ–∂–µ–Ω–∏–π —Å —Ä–µ–π—Ç–∏–Ω–≥–æ–º >= " << minRating << " –Ω–µ –Ω–∞–π–¥–µ–Ω–æ.\n";
     }
     else {
         printAppsTable(matched, os);
@@ -284,7 +284,7 @@ void filterPriorityDescByMinRating(PriorityDescQueue pq, double minRating, ostre
         }
     }
     if (matched.empty()) {
-        os << "œËÎÓÊÂÌËÈ Ò ÂÈÚËÌ„ÓÏ >= " << minRating << " ÌÂ Ì‡È‰ÂÌÓ.\n";
+        os << "–ü—Ä–∏–ª–æ–∂–µ–Ω–∏–π —Å —Ä–µ–π—Ç–∏–Ω–≥–æ–º >= " << minRating << " –Ω–µ –Ω–∞–π–¥–µ–Ω–æ.\n";
     }
     else {
         printAppsTable(matched, os);
@@ -296,9 +296,9 @@ int main() {
     SetConsoleOutputCP(1251);
 
     list<Developer> staffList;
-    staffList.push_back(Developer("»‚‡ÌÓ‚ »‚‡Ì", "TeamLead iOS", 7));
-    staffList.push_back(Developer("œÂÚÓ‚ œÂÚ", "Senior Android Dev", 5));
-    staffList.push_back(Developer("—Ë‰ÓÓ‚‡ ¿ÌÌ‡", "Middle Flutter Dev", 3));
+    staffList.push_back(Developer("–ò–≤–∞–Ω–æ–≤ –ò–≤–∞–Ω", "TeamLead iOS", 7));
+    staffList.push_back(Developer("–ü–µ—Ç—Ä–æ–≤ –ü–µ—Ç—Ä", "Senior Android Dev", 5));
+    staffList.push_back(Developer("–°–∏–¥–æ—Ä–æ–≤–∞ –ê–Ω–Ω–∞", "Middle Flutter Dev", 3));
 
     list<Developer>::iterator it1 = staffList.begin();
     list<Developer>::iterator it2 = staffList.begin();
@@ -311,7 +311,7 @@ int main() {
     Developer* dev3 = &(*it3);
 
     UtilityApp* app1 = new UtilityApp("Fitness Tracker", 4.8, 0.0, dev1, true, "Android 11+");
-    EnterpriseApp* app2 = new EnterpriseApp("SberBank Mobile", 4.9, 1500000.0, dev2, "œ¿Œ —·Â·‡ÌÍ", "√Œ—“-34.12");
+    EnterpriseApp* app2 = new EnterpriseApp("SberBank Mobile", 4.9, 1500000.0, dev2, "–ü–ê–û –°–±–µ—Ä–±–∞–Ω–∫", "–ì–û–°–¢-34.12");
     UtilityApp* app3 = new UtilityApp("Photo Editor Pro", 4.2, 299.0, dev1, false, "Android 9+");
     UtilityApp* app4 = new UtilityApp("Weather Forecast", 4.6, 149.0, dev3, false, "Android 8+");
 
@@ -337,31 +337,31 @@ int main() {
     int mainChoice = -1;
     do {
         cout << "\n======================================================\n";
-        cout << "                  √À¿¬ÕŒ≈ Ã≈Õﬁ                        \n";
+        cout << "                  –ì–õ–ê–í–ù–û–ï –ú–ï–ù–Æ                        \n";
         cout << "======================================================\n";
-        cout << " 1. Œ˜ÂÂ‰¸ ÂÎËÁ‡                    \n";
-        cout << " 2. »ÒÚÓËˇ Ë ÓÚÍ‡Ú ˆÂÌ˚              \n";
-        cout << " 3. œËÓËÚÂÚ ÔÓ ÂÈÚËÌ„Û            \n";
-        cout << " 0. ¬˚ıÓ‰                                             \n";
+        cout << " 1. –û—á–µ—Ä–µ–¥—å —Ä–µ–ª–∏–∑–∞                    \n";
+        cout << " 2. –ò—Å—Ç–æ—Ä–∏—è –∏ –æ—Ç–∫–∞—Ç —Ü–µ–Ω—ã              \n";
+        cout << " 3. –ü—Ä–∏–æ—Ä–∏—Ç–µ—Ç –ø–æ —Ä–µ–π—Ç–∏–Ω–≥—É            \n";
+        cout << " 0. –í—ã—Ö–æ–¥                                             \n";
         cout << "------------------------------------------------------\n";
-        cout << "¬˚·ÂËÚÂ ÔÛÌÍÚ: ";
+        cout << "–í—ã–±–µ—Ä–∏—Ç–µ –ø—É–Ω–∫—Ç: ";
         cin >> mainChoice;
 
         switch (mainChoice) {
         case 1: {
             int subChoice = -1;
             do {
-                cout << "\n--- QUEUE (Œ◊≈–≈ƒ‹ –≈À»«¿: œ≈–¬€Ã œ–»ÿ≈À ó œ≈–¬€Ã ¬€ÿ≈À) ---\n";
-                cout << " 1. œÓÍ‡Á‡Ú¸ Ó˜ÂÂ‰¸ ÂÎËÁ‡\n";
-                cout << " 2. œÓÒÚ‡‚ËÚ¸ ÌÓ‚Û˛ Ò·ÓÍÛ ‚ ÍÓÌÂˆ Ó˜ÂÂ‰Ë (push)\n";
-                cout << " 3. ¬˚ÔÛÒÚËÚ¸ ÔÂ‚Û˛ Ò·ÓÍÛ ËÁ Ó˜ÂÂ‰Ë (front + pop)\n";
-                cout << " 4. Õ‡ÈÚË Ò·ÓÍÛ ÔÓ Ì‡Á‚‡ÌË˛\n";
-                cout << " 5. Œ·ÌÓ‚ËÚ¸ ÂÈÚËÌ„ Ò·ÓÍË ‚ Ó˜ÂÂ‰Ë\n";
-                cout << " 6. ‘ËÎ¸Ú ÔÓ ÏËÌËÏ‡Î¸ÌÓÏÛ ÂÈÚËÌ„Û\n";
-                cout << " 7. ”ÔÓˇ‰Ó˜ËÚ¸ Ó˜ÂÂ‰¸ ÔÓ ˆÂÌÂ\n";
-                cout << " 8. —Óı‡ÌËÚ¸ ÓÚ˜ÂÚ Ó˜ÂÂ‰Ë ‚ Ù‡ÈÎ (queue_report.txt)\n";
-                cout << " 0. Õ‡Á‡‰ ‚ „Î‡‚ÌÓÂ ÏÂÌ˛\n";
-                cout << "¬˚·Ó: ";
+                cout << "\n--- QUEUE (–û–ß–ï–†–ï–î–¨ –†–ï–õ–ò–ó–ê: –ü–ï–†–í–´–ú –ü–†–ò–®–ï–õ ‚Äî –ü–ï–†–í–´–ú –í–´–®–ï–õ) ---\n";
+                cout << " 1. –ü–æ–∫–∞–∑–∞—Ç—å –æ—á–µ—Ä–µ–¥—å —Ä–µ–ª–∏–∑–∞\n";
+                cout << " 2. –ü–æ—Å—Ç–∞–≤–∏—Ç—å –Ω–æ–≤—É—é —Å–±–æ—Ä–∫—É –≤ –∫–æ–Ω–µ—Ü –æ—á–µ—Ä–µ–¥–∏ (push)\n";
+                cout << " 3. –í—ã–ø—É—Å—Ç–∏—Ç—å –ø–µ—Ä–≤—É—é —Å–±–æ—Ä–∫—É –∏–∑ –æ—á–µ—Ä–µ–¥–∏ (front + pop)\n";
+                cout << " 4. –ù–∞–π—Ç–∏ —Å–±–æ—Ä–∫—É –ø–æ –Ω–∞–∑–≤–∞–Ω–∏—é\n";
+                cout << " 5. –û–±–Ω–æ–≤–∏—Ç—å —Ä–µ–π—Ç–∏–Ω–≥ —Å–±–æ—Ä–∫–∏ –≤ –æ—á–µ—Ä–µ–¥–∏\n";
+                cout << " 6. –§–∏–ª—å—Ç—Ä –ø–æ –º–∏–Ω–∏–º–∞–ª—å–Ω–æ–º—É —Ä–µ–π—Ç–∏–Ω–≥—É\n";
+                cout << " 7. –£–ø–æ—Ä—è–¥–æ—á–∏—Ç—å –æ—á–µ—Ä–µ–¥—å –ø–æ —Ü–µ–Ω–µ\n";
+                cout << " 8. –°–æ—Ö—Ä–∞–Ω–∏—Ç—å –æ—Ç—á–µ—Ç –æ—á–µ—Ä–µ–¥–∏ –≤ —Ñ–∞–π–ª (queue_report.txt)\n";
+                cout << " 0. –ù–∞–∑–∞–¥ –≤ –≥–ª–∞–≤–Ω–æ–µ –º–µ–Ω—é\n";
+                cout << "–í—ã–±–æ—Ä: ";
                 cin >> subChoice;
 
                 switch (subChoice) {
@@ -372,12 +372,12 @@ int main() {
                 case 2: {
                     string name;
                     double rating, price;
-                    cout << "Õ‡Á‚‡ÌËÂ: ";
+                    cout << "–ù–∞–∑–≤–∞–Ω–∏–µ: ";
                     clearInputLine();
                     getline(cin, name);
-                    cout << "–ÂÈÚËÌ„: ";
+                    cout << "–†–µ–π—Ç–∏–Ω–≥: ";
                     cin >> rating;
-                    cout << "÷ÂÌ‡: ";
+                    cout << "–¶–µ–Ω–∞: ";
                     cin >> price;
 
                     MobileApp* created = new UtilityApp(name, rating, price, dev1, false, "Android 10+");
@@ -385,26 +385,26 @@ int main() {
                     releaseQueue.push(created);
                     pqDesc.push(AppItem(created));
                     pqAsc.push(AppItem(created));
-                    cout << "—·ÓÍ‡ ‰Ó·‡‚ÎÂÌ‡ ‚ ÍÓÌÂˆ Ó˜ÂÂ‰Ë ÂÎËÁ‡.\n";
+                    cout << "–°–±–æ—Ä–∫–∞ –¥–æ–±–∞–≤–ª–µ–Ω–∞ –≤ –∫–æ–Ω–µ—Ü –æ—á–µ—Ä–µ–¥–∏ —Ä–µ–ª–∏–∑–∞.\n";
                     break;
                 }
                 case 3: {
                     if (!releaseQueue.empty()) {
                         MobileApp* nextApp = releaseQueue.front();
                         releaseQueue.pop();
-                        cout << "¬˚ÔÛ˘ÂÌ‡ Ò‡Ï‡ˇ ‡ÌÌˇˇ Á‡ˇ‚Í‡ ËÁ Ó˜ÂÂ‰Ë:\n";
+                        cout << "–í—ã–ø—É—â–µ–Ω–∞ —Å–∞–º–∞—è —Ä–∞–Ω–Ω—è—è –∑–∞—è–≤–∫–∞ –∏–∑ –æ—á–µ—Ä–µ–¥–∏:\n";
                         vector<MobileApp*> oneItem;
                         oneItem.push_back(nextApp);
                         printAppsTable(oneItem, cout);
                     }
                     else {
-                        cout << "Œ˜ÂÂ‰¸ ÂÎËÁ‡ ÔÛÒÚ‡.\n";
+                        cout << "–û—á–µ—Ä–µ–¥—å —Ä–µ–ª–∏–∑–∞ –ø—É—Å—Ç–∞.\n";
                     }
                     break;
                 }
                 case 4: {
                     string name;
-                    cout << "¬‚Â‰ËÚÂ Ì‡Á‚‡ÌËÂ ‰Îˇ ÔÓËÒÍ‡: ";
+                    cout << "–í–≤–µ–¥–∏—Ç–µ –Ω–∞–∑–≤–∞–Ω–∏–µ –¥–ª—è –ø–æ–∏—Å–∫–∞: ";
                     clearInputLine();
                     getline(cin, name);
                     MobileApp* found = findOrEditInQueue(releaseQueue, name, false, 0.0);
@@ -414,51 +414,51 @@ int main() {
                         printAppsTable(oneItem, cout);
                     }
                     else {
-                        cout << "œËÎÓÊÂÌËÂ ÌÂ Ì‡È‰ÂÌÓ.\n";
+                        cout << "–ü—Ä–∏–ª–æ–∂–µ–Ω–∏–µ –Ω–µ –Ω–∞–π–¥–µ–Ω–æ.\n";
                     }
                     break;
                 }
                 case 5: {
                     string name;
                     double newRating;
-                    cout << "¬‚Â‰ËÚÂ Ì‡Á‚‡ÌËÂ ÔËÎÓÊÂÌËˇ: ";
+                    cout << "–í–≤–µ–¥–∏—Ç–µ –Ω–∞–∑–≤–∞–Ω–∏–µ –ø—Ä–∏–ª–æ–∂–µ–Ω–∏—è: ";
                     clearInputLine();
                     getline(cin, name);
-                    cout << "ÕÓ‚˚È ÂÈÚËÌ„: ";
+                    cout << "–ù–æ–≤—ã–π —Ä–µ–π—Ç–∏–Ω–≥: ";
                     cin >> newRating;
                     MobileApp* found = findOrEditInQueue(releaseQueue, name, true, newRating);
                     if (found) {
-                        cout << "–ÂÈÚËÌ„ Ó·ÌÓ‚ÎÂÌ.\n";
+                        cout << "–†–µ–π—Ç–∏–Ω–≥ –æ–±–Ω–æ–≤–ª–µ–Ω.\n";
                     }
                     else {
-                        cout << "œËÎÓÊÂÌËÂ ÌÂ Ì‡È‰ÂÌÓ.\n";
+                        cout << "–ü—Ä–∏–ª–æ–∂–µ–Ω–∏–µ –Ω–µ –Ω–∞–π–¥–µ–Ω–æ.\n";
                     }
                     break;
                 }
                 case 6: {
                     double minRating;
-                    cout << "ÃËÌËÏ‡Î¸Ì˚È ÂÈÚËÌ„: ";
+                    cout << "–ú–∏–Ω–∏–º–∞–ª—å–Ω—ã–π —Ä–µ–π—Ç–∏–Ω–≥: ";
                     cin >> minRating;
                     filterQueueByMinRating(releaseQueue, minRating, cout);
                     break;
                 }
                 case 7: {
                     sortQueueByPrice(releaseQueue);
-                    cout << "Œ˜ÂÂ‰¸ ÛÔÓˇ‰Ó˜ÂÌ‡ ÔÓ ˆÂÌÂ (ÔÓ ‚ÓÁ‡ÒÚ‡ÌË˛).\n";
+                    cout << "–û—á–µ—Ä–µ–¥—å —É–ø–æ—Ä—è–¥–æ—á–µ–Ω–∞ –ø–æ —Ü–µ–Ω–µ (–ø–æ –≤–æ–∑—Ä–∞—Å—Ç–∞–Ω–∏—é).\n";
                     break;
                 }
                 case 8: {
                     ofstream fout("queue_report.txt");
-                    fout << "=== Œ“◊≈“ œŒ  ŒÕ“≈…Õ≈–” QUEUE (Œ◊≈–≈ƒ‹ –≈À»«¿) ===\n\n";
+                    fout << "=== –û–¢–ß–ï–¢ –ü–û –ö–û–ù–¢–ï–ô–ù–ï–†–£ QUEUE (–û–ß–ï–†–ï–î–¨ –†–ï–õ–ò–ó–ê) ===\n\n";
                     dumpQueue(releaseQueue, fout);
                     fout.close();
-                    cout << "—Óı‡ÌÂÌÓ ‚ queue_report.txt\n";
+                    cout << "–°–æ—Ö—Ä–∞–Ω–µ–Ω–æ –≤ queue_report.txt\n";
                     break;
                 }
                 case 0:
                     break;
                 default:
-                    cout << "ÕÂ‚ÂÌ˚È ‚˚·Ó.\n";
+                    cout << "–ù–µ–≤–µ—Ä–Ω—ã–π –≤—ã–±–æ—Ä.\n";
                     break;
                 }
             } while (subChoice != 0);
@@ -467,18 +467,18 @@ int main() {
         case 2: {
             int subChoice = -1;
             do {
-                cout << "\n--- STACK (»—“Œ–»ﬂ » Œ“ ¿“ ÷≈Õ€: œŒ—À≈ƒÕ»Ã œ–»ÿ≈À ó œ≈–¬€Ã ¬€ÿ≈À) ---\n";
-                cout << " 1. œÓÍ‡Á‡Ú¸ ÒÚÂÍ ËÒÚÓËË (Ò‚ÂıÛ ‚ÌËÁ)\n";
-                cout << " 2. ƒÓ·‡‚ËÚ¸ ÔËÎÓÊÂÌËÂ Ì‡ ‚Â¯ËÌÛ ÒÚÂÍ‡ (push)\n";
-                cout << " 3. «‡Í˚Ú¸ ‚ÂıÌÂÂ ÔËÎÓÊÂÌËÂ \n";
-                cout << " 4. Õ‡ÈÚË ÔËÎÓÊÂÌËÂ Ë ÔÓ‰ÌˇÚ¸ Ì‡ ‚Â¯ËÌÛ ËÒÚÓËË\n";
-                cout << " 5. »ÁÏÂÌËÚ¸ ˆÂÌÛ ÔËÎÓÊÂÌËˇ (Ò Á‡ÔËÒ¸˛ ‚ ÒÚÂÍ ÓÚÍ‡Ú‡)\n";
-                cout << " 6. ŒÚÍ‡ÚËÚ¸ ÔÓÒÎÂ‰ÌÂÂ ËÁÏÂÌÂÌËÂ ˆÂÌ˚ (LIFO)\n";
-                cout << " 7. ‘ËÎ¸Ú ÔÓ ÏËÌËÏ‡Î¸ÌÓÏÛ ÂÈÚËÌ„Û\n";
-                cout << " 8. ”ÔÓˇ‰Ó˜ËÚ¸ ÒÚÂÍ ÔÓ ˆÂÌÂ\n";
-                cout << " 9. —Óı‡ÌËÚ¸ ÓÚ˜ÂÚ ÒÚÂÍ‡ ‚ Ù‡ÈÎ (stack_report.txt)\n";
-                cout << " 0. Õ‡Á‡‰ ‚ „Î‡‚ÌÓÂ ÏÂÌ˛\n";
-                cout << "¬˚·Ó: ";
+                cout << "\n--- STACK (–ò–°–¢–û–†–ò–Ø –ò –û–¢–ö–ê–¢ –¶–ï–ù–´: –ü–û–°–õ–ï–î–ù–ò–ú –ü–†–ò–®–ï–õ ‚Äî –ü–ï–†–í–´–ú –í–´–®–ï–õ) ---\n";
+                cout << " 1. –ü–æ–∫–∞–∑–∞—Ç—å —Å—Ç–µ–∫ –∏—Å—Ç–æ—Ä–∏–∏ (—Å–≤–µ—Ä—Ö—É –≤–Ω–∏–∑)\n";
+                cout << " 2. –î–æ–±–∞–≤–∏—Ç—å –ø—Ä–∏–ª–æ–∂–µ–Ω–∏–µ –Ω–∞ –≤–µ—Ä—à–∏–Ω—É —Å—Ç–µ–∫–∞ (push)\n";
+                cout << " 3. –ó–∞–∫—Ä—ã—Ç—å –≤–µ—Ä—Ö–Ω–µ–µ –ø—Ä–∏–ª–æ–∂–µ–Ω–∏–µ \n";
+                cout << " 4. –ù–∞–π—Ç–∏ –ø—Ä–∏–ª–æ–∂–µ–Ω–∏–µ –∏ –ø–æ–¥–Ω—è—Ç—å –Ω–∞ –≤–µ—Ä—à–∏–Ω—É –∏—Å—Ç–æ—Ä–∏–∏\n";
+                cout << " 5. –ò–∑–º–µ–Ω–∏—Ç—å —Ü–µ–Ω—É –ø—Ä–∏–ª–æ–∂–µ–Ω–∏—è (—Å –∑–∞–ø–∏—Å—å—é –≤ —Å—Ç–µ–∫ –æ—Ç–∫–∞—Ç–∞)\n";
+                cout << " 6. –û—Ç–∫–∞—Ç–∏—Ç—å –ø–æ—Å–ª–µ–¥–Ω–µ–µ –∏–∑–º–µ–Ω–µ–Ω–∏–µ —Ü–µ–Ω—ã (LIFO)\n";
+                cout << " 7. –§–∏–ª—å—Ç—Ä –ø–æ –º–∏–Ω–∏–º–∞–ª—å–Ω–æ–º—É —Ä–µ–π—Ç–∏–Ω–≥—É\n";
+                cout << " 8. –£–ø–æ—Ä—è–¥–æ—á–∏—Ç—å —Å—Ç–µ–∫ –ø–æ —Ü–µ–Ω–µ\n";
+                cout << " 9. –°–æ—Ö—Ä–∞–Ω–∏—Ç—å –æ—Ç—á–µ—Ç —Å—Ç–µ–∫–∞ –≤ —Ñ–∞–π–ª (stack_report.txt)\n";
+                cout << " 0. –ù–∞–∑–∞–¥ –≤ –≥–ª–∞–≤–Ω–æ–µ –º–µ–Ω—é\n";
+                cout << "–í—ã–±–æ—Ä: ";
                 cin >> subChoice;
 
                 switch (subChoice) {
@@ -489,64 +489,64 @@ int main() {
                 case 2: {
                     string name;
                     double rating, price;
-                    cout << "Õ‡Á‚‡ÌËÂ: ";
+                    cout << "–ù–∞–∑–≤–∞–Ω–∏–µ: ";
                     clearInputLine();
                     getline(cin, name);
-                    cout << "–ÂÈÚËÌ„: ";
+                    cout << "–†–µ–π—Ç–∏–Ω–≥: ";
                     cin >> rating;
-                    cout << "÷ÂÌ‡: ";
+                    cout << "–¶–µ–Ω–∞: ";
                     cin >> price;
 
                     MobileApp* created = new UtilityApp(name, rating, price, dev2, false, "iOS 16+");
                     allAllocatedApps.push_back(created);
                     historyStack.push(created);
-                    cout << "œËÎÓÊÂÌËÂ ÔÓÏÂ˘ÂÌÓ Ì‡ ‚Â¯ËÌÛ ÒÚÂÍ‡.\n";
+                    cout << "–ü—Ä–∏–ª–æ–∂–µ–Ω–∏–µ –ø–æ–º–µ—â–µ–Ω–æ –Ω–∞ –≤–µ—Ä—à–∏–Ω—É —Å—Ç–µ–∫–∞.\n";
                     break;
                 }
                 case 3: {
                     if (!historyStack.empty()) {
                         MobileApp* topApp = historyStack.top();
                         historyStack.pop();
-                        cout << "—ÌˇÚ ‚ÂıÌËÈ ˝ÎÂÏÂÌÚ ÒÚÂÍ‡:\n";
+                        cout << "–°–Ω—è—Ç –≤–µ—Ä—Ö–Ω–∏–π —ç–ª–µ–º–µ–Ω—Ç —Å—Ç–µ–∫–∞:\n";
                         vector<MobileApp*> oneItem;
                         oneItem.push_back(topApp);
                         printAppsTable(oneItem, cout);
                     }
                     else {
-                        cout << "—ÚÂÍ ÔÛÒÚ.\n";
+                        cout << "–°—Ç–µ–∫ –ø—É—Å—Ç.\n";
                     }
                     break;
                 }
                 case 4: {
                     string name;
-                    cout << "¬‚Â‰ËÚÂ Ì‡Á‚‡ÌËÂ ‰Îˇ ÔÓËÒÍ‡: ";
+                    cout << "–í–≤–µ–¥–∏—Ç–µ –Ω–∞–∑–≤–∞–Ω–∏–µ –¥–ª—è –ø–æ–∏—Å–∫–∞: ";
                     clearInputLine();
                     getline(cin, name);
                     MobileApp* found = findInStackAndPushTop(historyStack, name);
                     if (found) {
-                        cout << "Õ‡È‰ÂÌÓ Ë ÔÂÂÏÂ˘ÂÌÓ Ì‡ ‚Â¯ËÌÛ ËÒÚÓËË:\n";
+                        cout << "–ù–∞–π–¥–µ–Ω–æ –∏ –ø–µ—Ä–µ–º–µ—â–µ–Ω–æ –Ω–∞ –≤–µ—Ä—à–∏–Ω—É –∏—Å—Ç–æ—Ä–∏–∏:\n";
                         vector<MobileApp*> oneItem;
                         oneItem.push_back(found);
                         printAppsTable(oneItem, cout);
                     }
                     else {
-                        cout << "œËÎÓÊÂÌËÂ ÌÂ Ì‡È‰ÂÌÓ.\n";
+                        cout << "–ü—Ä–∏–ª–æ–∂–µ–Ω–∏–µ –Ω–µ –Ω–∞–π–¥–µ–Ω–æ.\n";
                     }
                     break;
                 }
                 case 5: {
                     string name;
                     double newPrice;
-                    cout << "¬‚Â‰ËÚÂ Ì‡Á‚‡ÌËÂ ÔËÎÓÊÂÌËˇ: ";
+                    cout << "–í–≤–µ–¥–∏—Ç–µ –Ω–∞–∑–≤–∞–Ω–∏–µ –ø—Ä–∏–ª–æ–∂–µ–Ω–∏—è: ";
                     clearInputLine();
                     getline(cin, name);
-                    cout << "ÕÓ‚‡ˇ ˆÂÌ‡: ";
+                    cout << "–ù–æ–≤–∞—è —Ü–µ–Ω–∞: ";
                     cin >> newPrice;
                     if (editPriceInStackWithUndo(historyStack, priceUndoStack, name, newPrice)) {
-                        cout << "÷ÂÌ‡ Ó·ÌÓ‚ÎÂÌ‡ (ÔÂ‰˚‰Û˘ÂÂ ÁÌ‡˜ÂÌËÂ ÒÓı‡ÌÂÌÓ ‚ ÒÚÂÍÂ ÓÚÍ‡Ú‡).\n";
+                        cout << "–¶–µ–Ω–∞ –æ–±–Ω–æ–≤–ª–µ–Ω–∞ (–ø—Ä–µ–¥—ã–¥—É—â–µ–µ –∑–Ω–∞—á–µ–Ω–∏–µ —Å–æ—Ö—Ä–∞–Ω–µ–Ω–æ –≤ —Å—Ç–µ–∫–µ –æ—Ç–∫–∞—Ç–∞).\n";
                     }
                     else {
-                        cout << "œËÎÓÊÂÌËÂ ÌÂ Ì‡È‰ÂÌÓ.\n";
+                        cout << "–ü—Ä–∏–ª–æ–∂–µ–Ω–∏–µ –Ω–µ –Ω–∞–π–¥–µ–Ω–æ.\n";
                     }
                     break;
                 }
@@ -556,39 +556,39 @@ int main() {
                         priceUndoStack.pop();
                         if (rec.app) {
                             rec.app->setPrice(rec.oldPrice);
-                            cout << "ŒÚÍ‡˜ÂÌ‡ ˆÂÌ‡ ‰Îˇ \"" << rec.app->getName()
-                                << "\" -> " << fixed << setprecision(2) << rec.oldPrice << " Û·.\n";
+                            cout << "–û—Ç–∫–∞—á–µ–Ω–∞ —Ü–µ–Ω–∞ –¥–ª—è \"" << rec.app->getName()
+                                << "\" -> " << fixed << setprecision(2) << rec.oldPrice << " —Ä—É–±.\n";
                         }
                     }
                     else {
-                        cout << "—ÚÂÍ ÓÚÍ‡ÚÓ‚ ˆÂÌ˚ ÔÛÒÚ.\n";
+                        cout << "–°—Ç–µ–∫ –æ—Ç–∫–∞—Ç–æ–≤ —Ü–µ–Ω—ã –ø—É—Å—Ç.\n";
                     }
                     break;
                 }
                 case 7: {
                     double minRating;
-                    cout << "ÃËÌËÏ‡Î¸Ì˚È ÂÈÚËÌ„: ";
+                    cout << "–ú–∏–Ω–∏–º–∞–ª—å–Ω—ã–π —Ä–µ–π—Ç–∏–Ω–≥: ";
                     cin >> minRating;
                     filterStackByMinRating(historyStack, minRating, cout);
                     break;
                 }
                 case 8: {
                     sortStackByPrice(historyStack);
-                    cout << "—ÚÂÍ ÛÔÓˇ‰Ó˜ÂÌ ÔÓ ˆÂÌÂ.\n";
+                    cout << "–°—Ç–µ–∫ —É–ø–æ—Ä—è–¥–æ—á–µ–Ω –ø–æ —Ü–µ–Ω–µ.\n";
                     break;
                 }
                 case 9: {
                     ofstream fout("stack_report.txt");
-                    fout << "=== Œ“◊≈“ œŒ  ŒÕ“≈…Õ≈–” STACK (»—“Œ–»ﬂ) ===\n\n";
+                    fout << "=== –û–¢–ß–ï–¢ –ü–û –ö–û–ù–¢–ï–ô–ù–ï–†–£ STACK (–ò–°–¢–û–†–ò–Ø) ===\n\n";
                     dumpStack(historyStack, fout);
                     fout.close();
-                    cout << "—Óı‡ÌÂÌÓ ‚ stack_report.txt\n";
+                    cout << "–°–æ—Ö—Ä–∞–Ω–µ–Ω–æ –≤ stack_report.txt\n";
                     break;
                 }
                 case 0:
                     break;
                 default:
-                    cout << "ÕÂ‚ÂÌ˚È ‚˚·Ó.\n";
+                    cout << "–ù–µ–≤–µ—Ä–Ω—ã–π –≤—ã–±–æ—Ä.\n";
                     break;
                 }
             } while (subChoice != 0);
@@ -597,17 +597,17 @@ int main() {
         case 3: {
             int subChoice = -1;
             do {
-                cout << "\n--- PRIORITY_QUEUE (œ–»Œ–»“≈“ œŒ –≈…“»Õ√”) ---\n";
-                cout << " 1. ¬˚‚ÂÒÚË ÔÓ Û·˚‚‡ÌË˛ ÂÈÚËÌ„‡ (Ï‡ÍÒËÏÛÏ Ì‡ ‚Â¯ËÌÂ)\n";
-                cout << " 2. ƒÓ·‡‚ËÚ¸ ÔËÎÓÊÂÌËÂ\n";
-                cout << " 3. »Á‚ÎÂ˜¸ ˝ÎÂÏÂÌÚ Ò Ì‡Ë‚˚Ò¯ËÏ ÂÈÚËÌ„ÓÏ \n";
-                cout << " 4. Õ‡ÈÚË ÔËÎÓÊÂÌËÂ ÔÓ Ì‡Á‚‡ÌË˛\n";
-                cout << " 5. –Â‰‡ÍÚËÓ‚‡Ú¸ ÂÈÚËÌ„ Ë ÔÂÂÒ˜ËÚ‡Ú¸ ÔËÓËÚÂÚ˚\n";
-                cout << " 6. ‘ËÎ¸Ú ÔÓ ÏËÌËÏ‡Î¸ÌÓÏÛ ÂÈÚËÌ„Û\n";
-                cout << " 7. ¬˚‚ÂÒÚË ÓÚ ÏÂÌ¸¯Â„Ó ÂÈÚËÌ„‡ Í ·ÓÎ¸¯ÂÏÛ\n";
-                cout << " 8. —Óı‡ÌËÚ¸ ÓÚ˜ÂÚ ‚ Ù‡ÈÎ (pqueue_report.txt)\n";
-                cout << " 0. Õ‡Á‡‰ ‚ „Î‡‚ÌÓÂ ÏÂÌ˛\n";
-                cout << "¬˚·Ó: ";
+                cout << "\n--- PRIORITY_QUEUE (–ü–†–ò–û–†–ò–¢–ï–¢ –ü–û –†–ï–ô–¢–ò–ù–ì–£) ---\n";
+                cout << " 1. –í—ã–≤–µ—Å—Ç–∏ –ø–æ —É–±—ã–≤–∞–Ω–∏—é —Ä–µ–π—Ç–∏–Ω–≥–∞ (–º–∞–∫—Å–∏–º—É–º –Ω–∞ –≤–µ—Ä—à–∏–Ω–µ)\n";
+                cout << " 2. –î–æ–±–∞–≤–∏—Ç—å –ø—Ä–∏–ª–æ–∂–µ–Ω–∏–µ\n";
+                cout << " 3. –ò–∑–≤–ª–µ—á—å —ç–ª–µ–º–µ–Ω—Ç —Å –Ω–∞–∏–≤—ã—Å—à–∏–º —Ä–µ–π—Ç–∏–Ω–≥–æ–º \n";
+                cout << " 4. –ù–∞–π—Ç–∏ –ø—Ä–∏–ª–æ–∂–µ–Ω–∏–µ –ø–æ –Ω–∞–∑–≤–∞–Ω–∏—é\n";
+                cout << " 5. –†–µ–¥–∞–∫—Ç–∏—Ä–æ–≤–∞—Ç—å —Ä–µ–π—Ç–∏–Ω–≥ –∏ –ø–µ—Ä–µ—Å—á–∏—Ç–∞—Ç—å –ø—Ä–∏–æ—Ä–∏—Ç–µ—Ç—ã\n";
+                cout << " 6. –§–∏–ª—å—Ç—Ä –ø–æ –º–∏–Ω–∏–º–∞–ª—å–Ω–æ–º—É —Ä–µ–π—Ç–∏–Ω–≥—É\n";
+                cout << " 7. –í—ã–≤–µ—Å—Ç–∏ –æ—Ç –º–µ–Ω—å—à–µ–≥–æ —Ä–µ–π—Ç–∏–Ω–≥–∞ –∫ –±–æ–ª—å—à–µ–º—É\n";
+                cout << " 8. –°–æ—Ö—Ä–∞–Ω–∏—Ç—å –æ—Ç—á–µ—Ç –≤ —Ñ–∞–π–ª (pqueue_report.txt)\n";
+                cout << " 0. –ù–∞–∑–∞–¥ –≤ –≥–ª–∞–≤–Ω–æ–µ –º–µ–Ω—é\n";
+                cout << "–í—ã–±–æ—Ä: ";
                 cin >> subChoice;
 
                 switch (subChoice) {
@@ -618,38 +618,38 @@ int main() {
                 case 2: {
                     string name;
                     double rating, price;
-                    cout << "Õ‡Á‚‡ÌËÂ: ";
+                    cout << "–ù–∞–∑–≤–∞–Ω–∏–µ: ";
                     clearInputLine();
                     getline(cin, name);
-                    cout << "–ÂÈÚËÌ„: ";
+                    cout << "–†–µ–π—Ç–∏–Ω–≥: ";
                     cin >> rating;
-                    cout << "÷ÂÌ‡: ";
+                    cout << "–¶–µ–Ω–∞: ";
                     cin >> price;
 
                     MobileApp* created = new UtilityApp(name, rating, price, dev3, true, "Android 12+");
                     allAllocatedApps.push_back(created);
                     pqDesc.push(AppItem(created));
                     pqAsc.push(AppItem(created));
-                    cout << "ƒÓ·‡‚ÎÂÌÓ ‚ Ó˜ÂÂ‰¸ Ò ÔËÓËÚÂÚÓÏ.\n";
+                    cout << "–î–æ–±–∞–≤–ª–µ–Ω–æ –≤ –æ—á–µ—Ä–µ–¥—å —Å –ø—Ä–∏–æ—Ä–∏—Ç–µ—Ç–æ–º.\n";
                     break;
                 }
                 case 3: {
                     if (!pqDesc.empty()) {
                         MobileApp* topApp = pqDesc.top().app;
                         pqDesc.pop();
-                        cout << "»Á‚ÎÂ˜ÂÌ Ò‡Ï˚È ÔËÓËÚÂÚÌ˚È ˝ÎÂÏÂÌÚ:\n";
+                        cout << "–ò–∑–≤–ª–µ—á–µ–Ω —Å–∞–º—ã–π –ø—Ä–∏–æ—Ä–∏—Ç–µ—Ç–Ω—ã–π —ç–ª–µ–º–µ–Ω—Ç:\n";
                         vector<MobileApp*> oneItem;
                         oneItem.push_back(topApp);
                         printAppsTable(oneItem, cout);
                     }
                     else {
-                        cout << "Œ˜ÂÂ‰¸ Ò ÔËÓËÚÂÚÓÏ ÔÛÒÚ‡.\n";
+                        cout << "–û—á–µ—Ä–µ–¥—å —Å –ø—Ä–∏–æ—Ä–∏—Ç–µ—Ç–æ–º –ø—É—Å—Ç–∞.\n";
                     }
                     break;
                 }
                 case 4: {
                     string name;
-                    cout << "¬‚Â‰ËÚÂ Ì‡Á‚‡ÌËÂ ‰Îˇ ÔÓËÒÍ‡: ";
+                    cout << "–í–≤–µ–¥–∏—Ç–µ –Ω–∞–∑–≤–∞–Ω–∏–µ –¥–ª—è –ø–æ–∏—Å–∫–∞: ";
                     clearInputLine();
                     getline(cin, name);
                     MobileApp* found = findInPriorityDesc(pqDesc, name);
@@ -659,29 +659,29 @@ int main() {
                         printAppsTable(oneItem, cout);
                     }
                     else {
-                        cout << "œËÎÓÊÂÌËÂ ÌÂ Ì‡È‰ÂÌÓ.\n";
+                        cout << "–ü—Ä–∏–ª–æ–∂–µ–Ω–∏–µ –Ω–µ –Ω–∞–π–¥–µ–Ω–æ.\n";
                     }
                     break;
                 }
                 case 5: {
                     string name;
                     double newRating;
-                    cout << "¬‚Â‰ËÚÂ Ì‡Á‚‡ÌËÂ ÔËÎÓÊÂÌËˇ: ";
+                    cout << "–í–≤–µ–¥–∏—Ç–µ –Ω–∞–∑–≤–∞–Ω–∏–µ –ø—Ä–∏–ª–æ–∂–µ–Ω–∏—è: ";
                     clearInputLine();
                     getline(cin, name);
-                    cout << "ÕÓ‚˚È ÂÈÚËÌ„: ";
+                    cout << "–ù–æ–≤—ã–π —Ä–µ–π—Ç–∏–Ω–≥: ";
                     cin >> newRating;
                     if (editRatingInPriorityQueues(pqDesc, pqAsc, name, newRating)) {
-                        cout << "–ÂÈÚËÌ„ Ó·ÌÓ‚ÎÂÌ, ÔËÓËÚÂÚ˚ ÔÂÂÒ˜ËÚ‡Ì˚.\n";
+                        cout << "–†–µ–π—Ç–∏–Ω–≥ –æ–±–Ω–æ–≤–ª–µ–Ω, –ø—Ä–∏–æ—Ä–∏—Ç–µ—Ç—ã –ø–µ—Ä–µ—Å—á–∏—Ç–∞–Ω—ã.\n";
                     }
                     else {
-                        cout << "œËÎÓÊÂÌËÂ ÌÂ Ì‡È‰ÂÌÓ.\n";
+                        cout << "–ü—Ä–∏–ª–æ–∂–µ–Ω–∏–µ –Ω–µ –Ω–∞–π–¥–µ–Ω–æ.\n";
                     }
                     break;
                 }
                 case 6: {
                     double minRating;
-                    cout << "ÃËÌËÏ‡Î¸Ì˚È ÂÈÚËÌ„: ";
+                    cout << "–ú–∏–Ω–∏–º–∞–ª—å–Ω—ã–π —Ä–µ–π—Ç–∏–Ω–≥: ";
                     cin >> minRating;
                     filterPriorityDescByMinRating(pqDesc, minRating, cout);
                     break;
@@ -698,26 +698,26 @@ int main() {
                 }
                 case 8: {
                     ofstream fout("pqueue_report.txt");
-                    fout << "=== Œ“◊≈“ œŒ PRIORITY_QUEUE ===\n\n";
+                    fout << "=== –û–¢–ß–ï–¢ –ü–û PRIORITY_QUEUE ===\n\n";
                     dumpPriorityDesc(pqDesc, fout);
                     fout.close();
-                    cout << "—Óı‡ÌÂÌÓ ‚ pqueue_report.txt\n";
+                    cout << "–°–æ—Ö—Ä–∞–Ω–µ–Ω–æ –≤ pqueue_report.txt\n";
                     break;
                 }
                 case 0:
                     break;
                 default:
-                    cout << "ÕÂ‚ÂÌ˚È ‚˚·Ó.\n";
+                    cout << "–ù–µ–≤–µ—Ä–Ω—ã–π –≤—ã–±–æ—Ä.\n";
                     break;
                 }
             } while (subChoice != 0);
             break;
         }
         case 0:
-            cout << "¬˚ıÓ‰ ËÁ ÔÓ„‡ÏÏ˚...\n";
+            cout << "–í—ã—Ö–æ–¥ –∏–∑ –ø—Ä–æ–≥—Ä–∞–º–º—ã...\n";
             break;
         default:
-            cout << "ÕÂ‚ÂÌ˚È ‚˚·Ó.\n";
+            cout << "–ù–µ–≤–µ—Ä–Ω—ã–π –≤—ã–±–æ—Ä.\n";
             break;
         }
     } while (mainChoice != 0);
