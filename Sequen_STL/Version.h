@@ -1,19 +1,19 @@
 #pragma once
 #include <iostream>
 #include <string>
-
+using namespace std;
 class Version {
 private:
-    std::string versionNumber;
-    std::string releaseDate;
+    string versionNumber;
+    string releaseDate;
     double sizeMB;
 
 public:
     Version();
-    Version(const std::string& ver, const std::string& date, double size);
+    Version(const string& ver, const string& date, double size);
 
-    std::string getVersionNumber() const;
-    std::string getReleaseDate() const;
+    string getVersionNumber() const;
+    string getReleaseDate() const;
     double getSizeMB() const;
 
     void display() const;

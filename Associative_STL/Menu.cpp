@@ -15,7 +15,7 @@
 
 using namespace std;
 
-void printCompactAppsTable(const map<string, MobileApp*>& appMap, ostream& os) {
+void printAppsTable(const map<string, MobileApp*>& appMap, ostream& os) {
     os << "+" << string(22, '-') << "+" << string(9, '-') << "+" << string(14, '-')
         << "+" << string(20, '-') << "+" << string(15, '-') << "+\n";
     os << "| " << left << setw(20) << "Название"
@@ -110,7 +110,7 @@ int main() {
                 cout << "\n----------------------------------------\n";
                 cout << "       Работа с приложениями      \n";
                 cout << "----------------------------------------\n";
-                cout << " 1. Посмотреть компактный список\n";
+                cout << " 1. Посмотреть приложений\n";
                 cout << " 2. Посмотреть полную информацию о конкретном приложении\n";
                 cout << " 3. Добавить приложение\n";
                 cout << " 4. Найти приложение по имени (find)\n";
@@ -123,7 +123,7 @@ int main() {
                 switch (subChoice) {
                 case 1: {
                     
-                    printCompactAppsTable(appMap, cout);
+                    printAppsTable(appMap, cout);
                     break;
                 }
                 case 2: {
@@ -188,7 +188,7 @@ int main() {
                 case 6: {
                     ofstream outFile("map_report.txt");
                     outFile << "=== КАТАЛОГ ПРИЛОЖЕНИЙ ===\n\n";
-                    printCompactAppsTable(appMap, outFile);
+                    printAppsTable(appMap, outFile);
                     outFile.close();
                     cout << "Отчет сохранен в файл map_report.txt\n";
                     break;

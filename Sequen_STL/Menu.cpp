@@ -56,6 +56,9 @@ void printPlatformsTable(const array<string, 4>& platforms, ostream& os) {
     }
     os << "+" << string(8, '-') << "+" << string(35, '-') << "+\n";
 }
+bool compareByRating(MobileApp* a, MobileApp* b) {
+    return a->getRating() > b->getRating();
+}
 
 int main() {
     SetConsoleCP(1251);
@@ -63,7 +66,7 @@ int main() {
 
     vector<MobileApp*> appCatalog;
     list<Developer> staffList;
-    array<string, 4> targetPlatforms = { "Android (Google Play)", "iOS (App Store)", "HarmonyOS", "Web App" };
+    array<string, 4> targetPlatforms = { "Android", "iOS ", "HarmonyOS", "Web App" };
 
     staffList.push_back(Developer("Иванов Иван", "TeamLead iOS", 7));
     staffList.push_back(Developer("Петров Петр", "Senior Android Dev", 5));
@@ -152,14 +155,33 @@ int main() {
                     getline(cin, name);
                     cout << "Рейтинг: "; cin >> rating;
                     cout << "Цена: "; cin >> price;
+                    cout << "\nДоступные разработчики:\n";
+                    int idx = 1;
+                    for (list<Developer>::const_iterator it = staffList.begin(); it != staffList.end(); ++it, ++idx) {
+                        cout << idx << ". ";
+                        it->printTableRow(cout);
+                    }
+                    int devIndex;
+                    cout << "Введите номер разработчика (1 - " << staffList.size() << "): ";
+                    cin >> devIndex;
 
+                    Developer* selectedDev = nullptr;
+                    if (devIndex >= 1 && devIndex <= (int)staffList.size()) {
+                        list<Developer>::iterator it = staffList.begin();
+                        advance(it, devIndex - 1); 
+                        selectedDev = &(*it);       
+                    }
+                    else {
+                        cout << "Неверный номер. По умолчанию назначен первый разработчик.\n";
+                        selectedDev = &(*staffList.begin());
+                    }
                     if (appType == 1) {
                         bool sub;
                         string osVer;
                         cout << "Требуется подписка (1 - Да, 0 - Нет): "; cin >> sub;
                         cout << "Целевая версия ОС (например, Android 11+): "; cin.ignore(); getline(cin, osVer);
 
-                        UtilityApp* uApp = new UtilityApp(name, rating, price, dev1, sub, osVer);
+                        UtilityApp* uApp = new UtilityApp(name, rating, price, selectedDev, sub, osVer);
                         uApp->addVersion(Version("1.0.0", "01.01.2026", 50.0));
                         appCatalog.push_back(uApp);
                     }
@@ -168,7 +190,7 @@ int main() {
                         cout << "Компания-заказчик: "; cin.ignore(); getline(cin, client);
                         cout << "Протокол безопасности (например, ГОСТ-34.12): "; getline(cin, sec);
 
-                        EnterpriseApp* eApp = new EnterpriseApp(name, rating, price, dev1, client, sec);
+                        EnterpriseApp* eApp = new EnterpriseApp(name, rating, price, selectedDev, client, sec);
                         eApp->addVersion(Version("1.0.0", "01.01.2026", 100.0));
                         appCatalog.push_back(eApp);
                     }
@@ -227,10 +249,8 @@ int main() {
                     break;
                 }
                 case 6: {
-                    sort(appCatalog.begin(), appCatalog.end(), [](MobileApp* a, MobileApp* b) {
-                        return a->getRating() > b->getRating();
-                        });
-                    cout << "Приложения отсортированы по рейтингу (от высшего к низшему).\n";
+                    sort(appCatalog.begin(), appCatalog.end(), compareByRating);
+                    cout << "Приложения отсортированы по рейтингу \n";
                     printAppsTable(appCatalog, cout);
                     break;
                 }
@@ -291,7 +311,7 @@ int main() {
                     cout << "Введите номер сотрудника (1 - " << staffList.size() << "): ";
                     cin >> n;
                     if (n >= 1 && n <= (int)staffList.size()) {
-                        std::list<Developer>::iterator it = staffList.begin();
+                        list<Developer>::iterator it = staffList.begin();
                         advance(it, n - 1);
                         string newPos; int newExp;
                         cout << "Новая должность: "; cin.ignore(); getline(cin, newPos);
@@ -309,7 +329,7 @@ int main() {
                     string qName;
                     cout << "Введите ФИО для поиска: "; cin.ignore(); getline(cin, qName);
                     bool found = false;
-                    for (std::list<Developer>::const_iterator it = staffList.begin(); it != staffList.end(); ++it) {
+                    for (list<Developer>::const_iterator it = staffList.begin(); it != staffList.end(); ++it) {
                         if (it->getFullName() == qName) {
                             it->printTableRow(cout);
                             found = true;

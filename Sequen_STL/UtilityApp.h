@@ -4,17 +4,17 @@
 class UtilityApp : public MobileApp {
 private:
     bool isSubscriptionRequired;
-    std::string targetOSVersion;
+    string targetOSVersion;
 
 public:
-    UtilityApp(const std::string& n = "Утилита", double r = 0.0, double p = 0.0,
-        Developer* dev = nullptr, bool sub = false, const std::string& osVer = "Android 10+");
+    UtilityApp(const string& n = "Утилита", double r = 0.0, double p = 0.0,
+        Developer* dev = nullptr, bool sub = false, const string& osVer = "Android 10+");
 
     bool getIsSubscriptionRequired() const;
-    std::string getTargetOSVersion() const;
+    string getTargetOSVersion() const;
 
     void setIsSubscriptionRequired(bool sub);
-    void setTargetOSVersion(const std::string& osVer);
+    void setTargetOSVersion(const string& osVer);
 
-    void printTableRow(std::ostream& os) const override;
+    void printTableRow(ostream& os) const override;
 };

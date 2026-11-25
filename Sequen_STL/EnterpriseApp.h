@@ -1,20 +1,20 @@
 #pragma once
 #include "MobileApp.h"
-
+using namespace std;
 class EnterpriseApp : public MobileApp {
 private:
-    std::string clientCompanyName;
-    std::string securityProtocol;
+    string clientCompanyName;
+    string securityProtocol;
 
 public:
-    EnterpriseApp(const std::string& n = "Корп. Софт", double r = 0.0, double p = 0.0,
-        Developer* dev = nullptr, const std::string& client = "Заказчик", const std::string& sec = "AES-256");
+    EnterpriseApp(const string& n = "Корп. Софт", double r = 0.0, double p = 0.0,
+        Developer* dev = nullptr, const string& client = "Заказчик", const string& sec = "AES-256");
 
-    std::string getClientCompanyName() const;
-    std::string getSecurityProtocol() const;
+    string getClientCompanyName() const;
+    string getSecurityProtocol() const;
 
-    void setClientCompanyName(const std::string& client);
-    void setSecurityProtocol(const std::string& sec);
+    void setClientCompanyName(const string& client);
+    void setSecurityProtocol(const string& sec);
 
-    void printTableRow(std::ostream& os) const override;
+    void printTableRow(ostream& os) const override;
 };

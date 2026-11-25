@@ -1,15 +1,15 @@
 #include "UtilityApp.h"
 #include<string>
 using namespace std;
-UtilityApp::UtilityApp(const std::string& n, double r, double p, Developer* dev, bool sub, const std::string& osVer)
+UtilityApp::UtilityApp(const string& n, double r, double p, Developer* dev, bool sub, const string& osVer)
     : MobileApp(n, r, p, dev), isSubscriptionRequired(sub), targetOSVersion(osVer) {
 }
 
 bool UtilityApp::getIsSubscriptionRequired() const { return isSubscriptionRequired; }
-std::string UtilityApp::getTargetOSVersion() const { return targetOSVersion; }
+string UtilityApp::getTargetOSVersion() const { return targetOSVersion; }
 
 void UtilityApp::setIsSubscriptionRequired(bool sub) { isSubscriptionRequired = sub; }
-void UtilityApp::setTargetOSVersion(const std::string& osVer) { targetOSVersion = osVer; }
+void UtilityApp::setTargetOSVersion(const string& osVer) { targetOSVersion = osVer; }
 
 void UtilityApp::printTableRow(ostream& os) const {
     

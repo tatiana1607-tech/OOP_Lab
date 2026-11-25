@@ -1,15 +1,15 @@
 #include "EnterpriseApp.h"
 #include<string>
 using namespace std;
-EnterpriseApp::EnterpriseApp(const std::string& n, double r, double p, Developer* dev, const std::string& client, const std::string& sec)
+EnterpriseApp::EnterpriseApp(const string& n, double r, double p, Developer* dev, const string& client, const string& sec)
     : MobileApp(n, r, p, dev), clientCompanyName(client), securityProtocol(sec) {
 }
 
-std::string EnterpriseApp::getClientCompanyName() const { return clientCompanyName; }
-std::string EnterpriseApp::getSecurityProtocol() const { return securityProtocol; }
+string EnterpriseApp::getClientCompanyName() const { return clientCompanyName; }
+string EnterpriseApp::getSecurityProtocol() const { return securityProtocol; }
 
-void EnterpriseApp::setClientCompanyName(const std::string& client) { clientCompanyName = client; }
-void EnterpriseApp::setSecurityProtocol(const std::string& sec) { securityProtocol = sec; }
+void EnterpriseApp::setClientCompanyName(const string& client) { clientCompanyName = client; }
+void EnterpriseApp::setSecurityProtocol(const string& sec) { securityProtocol = sec; }
 
 void EnterpriseApp::printTableRow(ostream& os) const {
     string verStr = versions.empty() ? "N/A" : versions.back().getVersionNumber();

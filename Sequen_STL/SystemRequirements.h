@@ -1,22 +1,22 @@
 #pragma once
 #include <iostream>
 #include <string>
-
+using namespace std;
 class SystemRequirements {
 private:
-    std::string osVersion;
+    string osVersion;
     int minRAM_GB;
     double storageMB;
 
 public:
     SystemRequirements();
-    SystemRequirements(const std::string& os, int ram, double storage);
+    SystemRequirements(const string& os, int ram, double storage);
 
-    std::string getOSVersion() const;
+    string getOSVersion() const;
     int getMinRAM() const;
     double getStorageMB() const;
 
-    void setOSVersion(const std::string& os);
+    void setOSVersion(const string& os);
     void setMinRAM(int ram);
     void setStorageMB(double storage);
 

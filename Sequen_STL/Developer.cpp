@@ -2,22 +2,40 @@
 
 Developer::Developer() : fullName("Не указано"), position("Junior Dev"), experienceYears(0) {}
 
-Developer::Developer(const std::string& name, const std::string& pos, int exp)
+Developer::Developer(const string& name, const string& pos, int exp)
     : fullName(name), position(pos), experienceYears(exp) {
 }
 
-std::string Developer::getFullName() const { return fullName; }
-std::string Developer::getPosition() const { return position; }
-int Developer::getExperience() const { return experienceYears; }
+string Developer::getFullName() const
+{
+    return fullName; 
+}
+string Developer::getPosition() const
+{ 
+    return position; 
+}
+int Developer::getExperience() const 
+{ 
+    return experienceYears; 
+}
 
-void Developer::setFullName(const std::string& name) { fullName = name; }
-void Developer::setPosition(const std::string& pos) { position = pos; }
-void Developer::setExperience(int exp) { experienceYears = exp; }
+void Developer::setFullName(const string& name) 
+{
+    fullName = name; 
+}
+void Developer::setPosition(const string& pos)
+{ 
+    position = pos;
+}
+void Developer::setExperience(int exp)
+{ 
+    experienceYears = exp;
+}
 
-void Developer::printTableRow(std::ostream& os) const {
-    os << "| " << std::left << std::setw(25) << fullName
-        << " | " << std::setw(20) << position
-        << " | " << std::right << std::setw(12) << experienceYears << " |\n";
+void Developer::printTableRow(ostream& os) const {
+    os << "| " << left << setw(25) << fullName
+        << " | " << setw(20) << position
+        << " | " << right << setw(12) << experienceYears << " |\n";
 }
 
 bool Developer::operator<(const Developer& other) const {

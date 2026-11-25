@@ -2,29 +2,29 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
-
+using namespace std;
 class Developer {
 private:
-    std::string fullName;
-    std::string position;
+    string fullName;
+    string position;
     int experienceYears;
 
 public:
     Developer();
-    Developer(const std::string& name, const std::string& pos, int exp);
+    Developer(const string& name, const string& pos, int exp);
 
-    std::string getFullName() const;
-    std::string getPosition() const;
+    string getFullName() const;
+    string getPosition() const;
     int getExperience() const;
 
-    void setFullName(const std::string& name);
-    void setPosition(const std::string& pos);
+    void setFullName(const string& name);
+    void setPosition(const string& pos);
     void setExperience(int exp);
 
-    void printTableRow(std::ostream& os) const;
+    void printTableRow(ostream& os) const;
 
     bool operator<(const Developer& other) const;
     bool operator==(const Developer& other) const;
 
-    friend std::ostream& operator<<(std::ostream& os, const Developer& dev);
+    friend ostream& operator<<(ostream& os, const Developer& dev);
 };
