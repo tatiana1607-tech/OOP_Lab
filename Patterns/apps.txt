@@ -1,0 +1,8 @@
+0;Sims4;14.8;Симулятор
+1;Chat;10.5;200000
+2;БелБанк Онлайн;3.2;BYN
+3;LearnC++;3.5;C++
+4;DazzCam;4.2;0
+0;CyberRunner;1;Аркада
+1;Instagram;456;100000
+2;EasyPay;3;BYN
