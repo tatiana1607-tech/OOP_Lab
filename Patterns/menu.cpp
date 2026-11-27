@@ -25,9 +25,9 @@ void createDefaultFileIfNotExists(const string& filename) {
 
     ofstream out(filename);
     if (out.is_open()) {
-        out << "0;Sims4;14.8;Ñèìóëÿòîð\n";
+        out << "0;Sims4;14.8;Ð¡Ð¸Ð¼ÑƒÐ»ÑÑ‚Ð¾Ñ€\n";
         out << "1;Chat;10.5;200000\n";
-        out << "2;ÁåëÁàíê Îíëàéí;3.2;BYN\n";
+        out << "2;Ð‘ÐµÐ»Ð‘Ð°Ð½Ðº ÐžÐ½Ð»Ð°Ð¹Ð½;3.2;BYN\n";
         out << "3;LearnC++;3.5;C++\n";
         out << "4;DazzCam;4.2;0\n";
         out.close();
@@ -37,7 +37,7 @@ void createDefaultFileIfNotExists(const string& filename) {
 void loadFromFile(const string& filename, vector<unique_ptr<MobileApp>>& apps) {
     ifstream in(filename);
     if (!in.is_open()) {
-        cout << "Îøèáêà îòêðûòèÿ ôàéëà " << filename << "!\n";
+        cout << "ÐžÑˆÐ¸Ð±ÐºÐ° Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚Ð¸Ñ Ñ„Ð°Ð¹Ð»Ð° " << filename << "!\n";
         return;
     }
 
@@ -71,7 +71,7 @@ void loadFromFile(const string& filename, vector<unique_ptr<MobileApp>>& apps) {
         }
     }
     in.close();
-    cout << "Óñïåøíî çàãðóæåíî îáúåêòîâ èç ôàéëà: " << apps.size() << "\n";
+    cout << "Ð£ÑÐ¿ÐµÑˆÐ½Ð¾ Ð·Ð°Ð³Ñ€ÑƒÐ¶ÐµÐ½Ð¾ Ð¾Ð±ÑŠÐµÐºÑ‚Ð¾Ð² Ð¸Ð· Ñ„Ð°Ð¹Ð»Ð°: " << apps.size() << "\n";
 }
 
 void saveAllToFile(const string& filename, const vector<unique_ptr<MobileApp>>& apps) {
@@ -81,26 +81,26 @@ void saveAllToFile(const string& filename, const vector<unique_ptr<MobileApp>>& 
             app->saveToFile(out);
         }
         out.close();
-        cout << "Âñå ïðèëîæåíèÿ ñîõðàíåíû â ôàéë " << filename << "!\n";
+        cout << "Ð’ÑÐµ Ð¿Ñ€Ð¸Ð»Ð¾Ð¶ÐµÐ½Ð¸Ñ ÑÐ¾Ñ…Ñ€Ð°Ð½ÐµÐ½Ñ‹ Ð² Ñ„Ð°Ð¹Ð» " << filename << "!\n";
     }
 }
 
 int chooseAppType() {
     int t;
-    cout << "Âûáåðèòå òèï ïðèëîæåíèÿ:\n"
-        << "0 - Èãðà (GameApp)\n"
-        << "1 - Ñîöñåòü (SocialApp)\n"
-        << "2 - Ôèíàíñû (FinanceApp)\n"
-        << "3 - Îáðàçîâàíèå (EducationApp)\n"
-        << "4 - Óòèëèòà (UtilityApp)\n"
-        << "Âàø âûáîð: ";
+    cout << "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ñ‚Ð¸Ð¿ Ð¿Ñ€Ð¸Ð»Ð¾Ð¶ÐµÐ½Ð¸Ñ:\n"
+        << "0 - Ð˜Ð³Ñ€Ð° (GameApp)\n"
+        << "1 - Ð¡Ð¾Ñ†ÑÐµÑ‚ÑŒ (SocialApp)\n"
+        << "2 - Ð¤Ð¸Ð½Ð°Ð½ÑÑ‹ (FinanceApp)\n"
+        << "3 - ÐžÐ±Ñ€Ð°Ð·Ð¾Ð²Ð°Ð½Ð¸Ðµ (EducationApp)\n"
+        << "4 - Ð£Ñ‚Ð¸Ð»Ð¸Ñ‚Ð° (UtilityApp)\n"
+        << "Ð’Ð°Ñˆ Ð²Ñ‹Ð±Ð¾Ñ€: ";
     cin >> t;
     return t;
 }
 
 void showAll(const vector<unique_ptr<MobileApp>>& apps) {
     if (apps.empty()) {
-        cout << "Ñïèñîê ïðèëîæåíèé ïóñò.\n";
+        cout << "Ð¡Ð¿Ð¸ÑÐ¾Ðº Ð¿Ñ€Ð¸Ð»Ð¾Ð¶ÐµÐ½Ð¸Ð¹ Ð¿ÑƒÑÑ‚.\n";
         return;
     }
 
@@ -108,12 +108,12 @@ void showAll(const vector<unique_ptr<MobileApp>>& apps) {
 
     cout << "\n" << line << "\n";
     cout << left
-        << "| " << setw(3) << "¹"
-        << "| " << setw(12) << "Êàòåãîðèÿ"
-        << "| " << setw(18) << "Íàçâàíèå"
-        << "| " << setw(7) << "Âåðñèÿ"
-        << "| " << setw(46) << "Ïðîãðàììíûé ìîäóëü (Ïîëèìîðôíàÿ ôàáðèêà)"
-        << "| " << setw(24) << "Ñïåöèôèêà ïðèëîæåíèÿ" << "|\n";
+        << "| " << setw(3) << "â„–"
+        << "| " << setw(12) << "ÐšÐ°Ñ‚ÐµÐ³Ð¾Ñ€Ð¸Ñ"
+        << "| " << setw(18) << "ÐÐ°Ð·Ð²Ð°Ð½Ð¸Ðµ"
+        << "| " << setw(7) << "Ð’ÐµÑ€ÑÐ¸Ñ"
+        << "| " << setw(46) << "ÐŸÑ€Ð¾Ð³Ñ€Ð°Ð¼Ð¼Ð½Ñ‹Ð¹ Ð¼Ð¾Ð´ÑƒÐ»ÑŒ (ÐŸÐ¾Ð»Ð¸Ð¼Ð¾Ñ€Ñ„Ð½Ð°Ñ Ñ„Ð°Ð±Ñ€Ð¸ÐºÐ°)"
+        << "| " << setw(24) << "Ð¡Ð¿ÐµÑ†Ð¸Ñ„Ð¸ÐºÐ° Ð¿Ñ€Ð¸Ð»Ð¾Ð¶ÐµÐ½Ð¸Ñ" << "|\n";
     cout << line << "\n";
 
     for (size_t i = 0; i < apps.size(); ++i) {
@@ -136,18 +136,18 @@ int main() {
     int choice = -1;
 
     while (choice != 0) {
-        cout << "\n================ ÌÅÍÞ Ó×ÅÒÀ ÏÐÈËÎÆÅÍÈÉ ================\n"
-            << "1. Äîáàâèòü (Ïàòòåðí 1: Ôàáðè÷íûé ìåòîä ïî óìîë÷àíèþ)\n"
-            << "2. Äîáàâèòü ñ ïàðàìåòðàìè (Ïàòòåðí 2: Ôàáðè÷íûé ìåòîä ñ àðãóìåíòàìè)\n"
-            << "3. Äîáàâèòü ÷åðåç ðååñòð (Ïàòòåðí 3: Ôàáðè÷íûé êîíñòðóêòîð)\n"
-            << "4. Êëîíèðîâàòü ñóùåñòâóþùåå (Ïàòòåðí 5: Ïîëèìîðôíîå êîïèðîâàíèå)\n"
-            << "5. Ïîêàçàòü òåêóùèé ñïèñîê íà ýêðàíå (Ïàòòåðí 4: Ìîäóëè)\n"
-            << "6. Ðåäàêòèðîâàòü ïðèëîæåíèå\n"
-            << "7. Óäàëèòü ïðèëîæåíèå\n"
-            << "8. Ñîõðàíèòü òåêóùèé ñïèñîê â ôàéë (" << filename << ")\n"
-            << "9. Ïðî÷èòàòü äàííûå èç ôàéëà (" << filename << ") è ïîêàçàòü\n"
-            << "0. Âûõîä\n"
-            << "Âûáåðèòå äåéñòâèå: ";
+        cout << "\n================ ÐœÐ•ÐÐ® Ð£Ð§Ð•Ð¢Ð ÐŸÐ Ð˜Ð›ÐžÐ–Ð•ÐÐ˜Ð™ ================\n"
+            << "1. Ð”Ð¾Ð±Ð°Ð²Ð¸Ñ‚ÑŒ (ÐŸÐ°Ñ‚Ñ‚ÐµÑ€Ð½ 1: Ð¤Ð°Ð±Ñ€Ð¸Ñ‡Ð½Ñ‹Ð¹ Ð¼ÐµÑ‚Ð¾Ð´ Ð¿Ð¾ ÑƒÐ¼Ð¾Ð»Ñ‡Ð°Ð½Ð¸ÑŽ)\n"
+            << "2. Ð”Ð¾Ð±Ð°Ð²Ð¸Ñ‚ÑŒ Ñ Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð°Ð¼Ð¸ (ÐŸÐ°Ñ‚Ñ‚ÐµÑ€Ð½ 2: Ð¤Ð°Ð±Ñ€Ð¸Ñ‡Ð½Ñ‹Ð¹ Ð¼ÐµÑ‚Ð¾Ð´ Ñ Ð°Ñ€Ð³ÑƒÐ¼ÐµÐ½Ñ‚Ð°Ð¼Ð¸)\n"
+            << "3. Ð”Ð¾Ð±Ð°Ð²Ð¸Ñ‚ÑŒ Ñ‡ÐµÑ€ÐµÐ· Ñ€ÐµÐµÑÑ‚Ñ€ (ÐŸÐ°Ñ‚Ñ‚ÐµÑ€Ð½ 3: Ð¤Ð°Ð±Ñ€Ð¸Ñ‡Ð½Ñ‹Ð¹ ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€)\n"
+            << "4. ÐšÐ»Ð¾Ð½Ð¸Ñ€Ð¾Ð²Ð°Ñ‚ÑŒ ÑÑƒÑ‰ÐµÑÑ‚Ð²ÑƒÑŽÑ‰ÐµÐµ (ÐŸÐ°Ñ‚Ñ‚ÐµÑ€Ð½ 5: ÐŸÐ¾Ð»Ð¸Ð¼Ð¾Ñ€Ñ„Ð½Ð¾Ðµ ÐºÐ¾Ð¿Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ðµ)\n"
+            << "5. ÐŸÐ¾ÐºÐ°Ð·Ð°Ñ‚ÑŒ Ñ‚ÐµÐºÑƒÑ‰Ð¸Ð¹ ÑÐ¿Ð¸ÑÐ¾Ðº Ð½Ð° ÑÐºÑ€Ð°Ð½Ðµ (ÐŸÐ°Ñ‚Ñ‚ÐµÑ€Ð½ 4: ÐœÐ¾Ð´ÑƒÐ»Ð¸)\n"
+            << "6. Ð ÐµÐ´Ð°ÐºÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ñ‚ÑŒ Ð¿Ñ€Ð¸Ð»Ð¾Ð¶ÐµÐ½Ð¸Ðµ\n"
+            << "7. Ð£Ð´Ð°Ð»Ð¸Ñ‚ÑŒ Ð¿Ñ€Ð¸Ð»Ð¾Ð¶ÐµÐ½Ð¸Ðµ\n"
+            << "8. Ð¡Ð¾Ñ…Ñ€Ð°Ð½Ð¸Ñ‚ÑŒ Ñ‚ÐµÐºÑƒÑ‰Ð¸Ð¹ ÑÐ¿Ð¸ÑÐ¾Ðº Ð² Ñ„Ð°Ð¹Ð» (" << filename << ")\n"
+            << "9. ÐŸÑ€Ð¾Ñ‡Ð¸Ñ‚Ð°Ñ‚ÑŒ Ð´Ð°Ð½Ð½Ñ‹Ðµ Ð¸Ð· Ñ„Ð°Ð¹Ð»Ð° (" << filename << ") Ð¸ Ð¿Ð¾ÐºÐ°Ð·Ð°Ñ‚ÑŒ\n"
+            << "0. Ð’Ñ‹Ñ…Ð¾Ð´\n"
+            << "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ðµ: ";
         cin >> choice;
 
         if (choice == 1) {
@@ -155,53 +155,53 @@ int main() {
             unique_ptr<MobileApp> app = makeAppSimple(static_cast<AppType>(t));
             if (app) {
                 apps.push_back(move(app));
-                cout << "Ïðèëîæåíèå ñîçäàíî ÷åðåç ïðîñòîé ôàáðè÷íûé ìåòîä!\n";
+                cout << "ÐŸÑ€Ð¸Ð»Ð¾Ð¶ÐµÐ½Ð¸Ðµ ÑÐ¾Ð·Ð´Ð°Ð½Ð¾ Ñ‡ÐµÑ€ÐµÐ· Ð¿Ñ€Ð¾ÑÑ‚Ð¾Ð¹ Ñ„Ð°Ð±Ñ€Ð¸Ñ‡Ð½Ñ‹Ð¹ Ð¼ÐµÑ‚Ð¾Ð´!\n";
             }
         }
         else if (choice == 2) {
             int t = chooseAppType();
             string name;
             double ver;
-            cout << "Ââåäèòå íàçâàíèå: ";
+            cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ðµ: ";
             getline(cin >> ws, name);
-            cout << "Ââåäèòå âåðñèþ: ";
+            cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð²ÐµÑ€ÑÐ¸ÑŽ: ";
             cin >> ver;
 
             unique_ptr<AppSpec> spec;
             if (t == GAME_APP) {
                 string genre;
-                cout << "Ââåäèòå æàíð: ";
+                cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¶Ð°Ð½Ñ€: ";
                 getline(cin >> ws, genre);
                 spec = make_unique<GameAppSpec>(name, ver, genre);
             }
             else if (t == SOCIAL_APP) {
                 int maxG;
-                cout << "Ìàêñ. ðàçìåð ãðóïïû: ";
+                cout << "ÐœÐ°ÐºÑ. Ñ€Ð°Ð·Ð¼ÐµÑ€ Ð³Ñ€ÑƒÐ¿Ð¿Ñ‹: ";
                 cin >> maxG;
                 spec = make_unique<SocialAppSpec>(name, ver, maxG);
             }
             else if (t == FINANCE_APP) {
                 string curr;
-                cout << "Âàëþòà: ";
+                cout << "Ð’Ð°Ð»ÑŽÑ‚Ð°: ";
                 cin >> curr;
                 spec = make_unique<FinanceAppSpec>(name, ver, curr);
             }
             else if (t == EDUCATION_APP) {
                 string subj;
-                cout << "Ïðåäìåò: ";
+                cout << "ÐŸÑ€ÐµÐ´Ð¼ÐµÑ‚: ";
                 getline(cin >> ws, subj);
                 spec = make_unique<EducationAppSpec>(name, ver, subj);
             }
             else if (t == UTILITY_APP) {
                 bool root;
-                cout << "Íóæåí Root (1/0): ";
+                cout << "ÐÑƒÐ¶ÐµÐ½ Root (1/0): ";
                 cin >> root;
                 spec = make_unique<UtilityAppSpec>(name, ver, root);
             }
 
             if (spec) {
                 apps.push_back(makeAppWithArgs(spec.get()));
-                cout << "Ïðèëîæåíèå ñîçäàíî ñ ïåðåäà÷åé àðãóìåíòîâ!\n";
+                cout << "ÐŸÑ€Ð¸Ð»Ð¾Ð¶ÐµÐ½Ð¸Ðµ ÑÐ¾Ð·Ð´Ð°Ð½Ð¾ Ñ Ð¿ÐµÑ€ÐµÐ´Ð°Ñ‡ÐµÐ¹ Ð°Ñ€Ð³ÑƒÐ¼ÐµÐ½Ñ‚Ð¾Ð²!\n";
             }
         }
         else if (choice == 3) {
@@ -209,18 +209,18 @@ int main() {
             unique_ptr <MobileApp> app = MobileApp::createFromRegistry(id);
             if (app) {
                 apps.push_back(move(app));
-                cout << "Ïðèëîæåíèå ñîçäàíî ÷åðåç äèíàìè÷åñêèé ðååñòð!\n";
+                cout << "ÐŸÑ€Ð¸Ð»Ð¾Ð¶ÐµÐ½Ð¸Ðµ ÑÐ¾Ð·Ð´Ð°Ð½Ð¾ Ñ‡ÐµÑ€ÐµÐ· Ð´Ð¸Ð½Ð°Ð¼Ð¸Ñ‡ÐµÑÐºÐ¸Ð¹ Ñ€ÐµÐµÑÑ‚Ñ€!\n";
             }
         }
         else if (choice == 4) {
             showAll(apps);
             if (!apps.empty()) {
                 int idx;
-                cout << "Ââåäèòå íîìåð ïðèëîæåíèÿ äëÿ êîïèðîâàíèÿ: ";
+                cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð¼ÐµÑ€ Ð¿Ñ€Ð¸Ð»Ð¾Ð¶ÐµÐ½Ð¸Ñ Ð´Ð»Ñ ÐºÐ¾Ð¿Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ñ: ";
                 cin >> idx;
                 if (idx >= 1 && idx <= static_cast<int>(apps.size())) {
                     apps.push_back(apps[idx - 1]->cloneUnique());
-                    cout << "Êîïèÿ óñïåøíî ñîçäàíà!\n";
+                    cout << "ÐšÐ¾Ð¿Ð¸Ñ ÑƒÑÐ¿ÐµÑˆÐ½Ð¾ ÑÐ¾Ð·Ð´Ð°Ð½Ð°!\n";
                 }
             }
         }
@@ -231,11 +231,11 @@ int main() {
             showAll(apps);
             if (!apps.empty()) {
                 int idx;
-                cout << "Ââåäèòå íîìåð ïðèëîæåíèÿ äëÿ ðåäàêòèðîâàíèÿ: ";
+                cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð¼ÐµÑ€ Ð¿Ñ€Ð¸Ð»Ð¾Ð¶ÐµÐ½Ð¸Ñ Ð´Ð»Ñ Ñ€ÐµÐ´Ð°ÐºÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ñ: ";
                 cin >> idx;
                  if (idx >= 1 && idx <= static_cast<int>(apps.size())) {
                     apps[idx - 1]->edit();
-                    cout << "Äàííûå îáíîâëåíû!\n";
+                    cout << "Ð”Ð°Ð½Ð½Ñ‹Ðµ Ð¾Ð±Ð½Ð¾Ð²Ð»ÐµÐ½Ñ‹!\n";
                 }
             }
         }
@@ -243,12 +243,12 @@ int main() {
             showAll(apps);
             if (!apps.empty()) {
                 int idx;
-                cout << "Ââåäèòå íîìåð ïðèëîæåíèÿ äëÿ óäàëåíèÿ: ";
+                cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð¼ÐµÑ€ Ð¿Ñ€Ð¸Ð»Ð¾Ð¶ÐµÐ½Ð¸Ñ Ð´Ð»Ñ ÑƒÐ´Ð°Ð»ÐµÐ½Ð¸Ñ: ";
                 cin >> idx;
                 if (idx >= 1 && idx <= static_cast<int>(apps.size())) {
                     
                     apps.erase(apps.begin() + (idx - 1));
-                    cout << "Ïðèëîæåíèå óäàëåíî!\n";
+                    cout << "ÐŸÑ€Ð¸Ð»Ð¾Ð¶ÐµÐ½Ð¸Ðµ ÑƒÐ´Ð°Ð»ÐµÐ½Ð¾!\n";
                 }
             }
         }
